@@ -1,29 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BirdHuntingGame.Code;
 using System.Media;
 using System.IO;
-using System.Runtime.InteropServices;
 
 namespace BirdHuntingGame.Forms
 {
-	public partial class PlayGameForm : Form
+	public partial class imgBackgroundOnGame : Form
 	{
-		private GameStatus GameStatus;
-		private Guns SelectedGun;
-		private Birds SelectedBird;
+		private GameStatus GameStatus;  // Trạng thái game
+		private Guns SelectedGun;       // Súng bắn gà
+		private Birds SelectedBird;     // Loại chim bay trong map
 
 		private List<BirdTimer> FlyingBirds = new List<BirdTimer>();
 
-		public PlayGameForm(Guns gun, Birds bird)
+		public imgBackgroundOnGame(Guns gun, Birds bird)
 		{
+            // Bắt đầu load form mở đầu
 			InitializeComponent();
 
 			this.GameStatus = GameStatus.Continue;
@@ -37,47 +32,52 @@ namespace BirdHuntingGame.Forms
 
 		private void SetupCrossHair()
 		{
-			if (SelectedGun == Guns.Shotgun)
-			{
-				this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.ShotGun_crosshair_small.GetHicon());
-			}
-			else if (SelectedGun == Guns.M1Grand)
-			{
-				this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.M1Garand_crosshair_small.GetHicon());
-			}
-			else if (SelectedGun == Guns.Glock)
-			{
-				this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.glock_crosshair_small.GetHicon());
-			}
-		}
+            // Tuỳ chỉnh tâm súng
+            #region Code chọn tâm súng và thay thế chuột bằng tâm
+            switch (SelectedGun)
+            {
+                case Guns.Gun00:
+                    this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.Scope00.GetHicon());
+                    break;
+                case Guns.Gun01:
+                    this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.Scope00.GetHicon());
+                    break;
+                case Guns.Gun02:
+                    this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.Scope01.GetHicon());
+                    break;
+                case Guns.Gun03:
+                    this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.Scope01.GetHicon());
+                    break;
+                case Guns.Gun04:
+                    this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.Scope02.GetHicon());
+                    break;
+                case Guns.Gun05:
+                    this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.Scope02.GetHicon());
+                    break;
+                case Guns.Gun06:
+                    this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.Scope03.GetHicon());
+                    break;
+                case Guns.Gun07:
+                    this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.Scope03.GetHicon());
+                    break;
+                case Guns.Gun08:
+                    this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.Scope04.GetHicon());
+                    break;
+                case Guns.Gun09:
+                    this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.Scope04.GetHicon());
+                    break;
+                case Guns.Gun10:
+                    this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.Scope05.GetHicon());
+                    break;
+                default:
+                    break;
+            }
+            #endregion
+        }
 
-		#region SoundRelatedCode
-
-		[DllImport("winmm.dll")]
-		static extern Int32 mciSendString(string command, StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
-
-		private const int MM_MCINOTIFY = 0x03b9;
-		private const int MCI_NOTIFY_SUCCESS = 0x01;
-
-		protected override void WndProc(ref Message m)
-		{
-			if (m.Msg == MM_MCINOTIFY)
-			{
-				switch (m.WParam.ToInt32())
-				{
-					case MCI_NOTIFY_SUCCESS:
-						mciSendString("close forest-and-birds", null, 0, this.Handle); // first close, after first run, the previous opened file should be terminated
-						mciSendString("stop forest-and-birds", null, 0, this.Handle);
-						PlayForestBirdsSound();
-						break;
-					default:
-						break;
-				}
-			}
-			base.WndProc(ref m);
-		}
-
-		protected override CreateParams CreateParams
+        // Hàm ghi đè tham số mặc định
+        #region Code ghi đề tham số mặc định
+        protected override CreateParams CreateParams
 		{
 			get
 			{
@@ -86,69 +86,42 @@ namespace BirdHuntingGame.Forms
 				return cp;
 			}
 		}
+        #endregion
 
-		public void KnowSounds()
+        public void PlayGunSound()
 		{
-			mciSendString(@"open Sounds/forest-and-birds.wav type waveaudio alias forest-and-birds", null, 0, IntPtr.Zero);
-			mciSendString(@"open Sounds/Glock-Gun-Fire.wav type waveaudio alias Glock-Gun-Fire", null, 0, IntPtr.Zero);
-			mciSendString(@"open Sounds/Shotgun-Fire.wav type waveaudio alias Shotgun-Fire", null, 0, IntPtr.Zero);
-			mciSendString(@"open Sounds/M1Garand-Fire.wav type waveaudio alias M1Garand-Fire", null, 0, IntPtr.Zero);
-		}
-
-		public void PlayGunSound()
-		{
-			new System.Threading.Thread(() =>
-			{
-				if (SelectedGun == Guns.Shotgun)
-				{
-					FileStream gunSoundFile = new FileStream("Sounds/Shotgun-Fire.wav", FileMode.Open, FileAccess.Read);
-					new SoundPlayer(gunSoundFile).Play();
-				}
-				else if (SelectedGun == Guns.M1Grand)
-				{
-					FileStream gunSoundFile = new FileStream("Sounds/M1Garand-Fire.wav", FileMode.Open, FileAccess.Read);
-					new SoundPlayer(gunSoundFile).Play();
-				}
-				else if (SelectedGun == Guns.Glock)
-				{
-					FileStream gunSoundFile = new FileStream("Sounds/Glock-Gun-Fire.wav", FileMode.Open, FileAccess.Read);
-					new SoundPlayer(gunSoundFile).Play();
-				}
-			}).Start();
-		}
+            // Random âm thanh bắn súng
+            string nameSoundGun = "Sounds/gun" + Convert.ToString( new Random().Next(0,2) ) + ".wav";
+            FileStream gunSoundFile = new FileStream(nameSoundGun, FileMode.Open, FileAccess.Read);
+            new SoundPlayer(gunSoundFile).Play();
+        }
 
 		public void PlayBirdHitSound()
 		{
-			new System.Threading.Thread(() =>
-			{
-				FileStream gunSoundFile = new FileStream("Sounds/bird-hit.wav", FileMode.Open, FileAccess.Read);
-				new SoundPlayer(gunSoundFile).Play();
-			}).Start();
-
-			//mciSendString(@"play gun1", null, 0, IntPtr.Zero);
+            // Random âm thanh chim bị bắn trúng
+            string nameSoundBird = "Sounds/chicken" + Convert.ToString(new Random().Next(0, 9)) + ".wav";
+            FileStream gunSoundFile = new FileStream(nameSoundBird, FileMode.Open, FileAccess.Read);
+			new SoundPlayer(gunSoundFile).Play();
 		}
 
 		public void PlayForestBirdsSound()
 		{
-            //new System.Threading.Thread(() =>
-            //{
-
-            //    FileStream forestBirdsSoundFile = new FileStream("Sounds/forest-and-birds.wav", FileMode.Open, FileAccess.Read);
-            //    new SoundPlayer(forestBirdsSoundFile).Play();
-
-            //}).Start();
-
-            mciSendString(@"play forest-and-birds notify", null, 0, IntPtr.Zero);
+            // Nhạc nền mở đầu lúc bắt đầu màn hình bắn gà
+            FileStream forestBirdsSoundFile = new FileStream("Sounds/Start02.wav", FileMode.Open, FileAccess.Read);
+            new SoundPlayer(forestBirdsSoundFile).Play();
         }
-		#endregion
 
 		private void PlayGameForm_Load(object sender, EventArgs e)
 		{
-			AddNewBird("", "");
-			AddNewBird("", "");
-			AddNewBird("", "");
+            // Bắt đầu load màn hình bắn gà
 
-			KnowSounds();
+            // Số lượng chim được sinh ra trong màn hình
+            for (int i = 0; i < 3; i++)
+            {
+                AddNewBird("", "");
+            }
+
+            // Chạy nhạc nền bắn gà
 			PlayForestBirdsSound();
 		}
 		
@@ -169,6 +142,12 @@ namespace BirdHuntingGame.Forms
 		
 		private void BirdTimer_Tick(object sender, EventArgs e)
 		{
+            /*
+             * + xử lý toạ con chim bay
+             * + trạng thái của chim
+             * + thêm mới chim nếu con cũ chết
+             * + điều kiện để chim chết
+            */
 			BirdTimer BirdTimer = (BirdTimer)sender;
 
 			if (BirdTimer != null)
@@ -177,47 +156,55 @@ namespace BirdHuntingGame.Forms
 				int YLocation = 0;
 
 				if (BirdTimer.BirdBox.Status == "Alive")
-				{
-					if (BirdTimer.BirdBox.Location.X + BirdTimer.BirdBox.Size.Width < 0)
+                    #region Code xử lý nếu chim vẫn sống
+                {
+                    if (BirdTimer.BirdBox.Location.X + BirdTimer.BirdBox.Size.Width < 0)
 					{
-						//XLocation = this.Width;
+                        // Nếu con chim bay ra phía ngoài màn hình -> xoá
 						XLocation = BirdTimer.BirdBox.Location.X - Extensions.GetRandomNumber();
 						BirdTimer.BirdBox.Status = "Downed";
+                        return;
 					}
 					else
 					{
+                        // Nếu không thì cho con chim bay về bên trái
 						XLocation = BirdTimer.BirdBox.Location.X - Extensions.GetRandomNumber();
 					}
 
 					if (BirdTimer.BirdBox.Location.Y + BirdTimer.BirdBox.Size.Height > this.Height - 50)
 					{
+                        // Nếu con chim bay lên cao quá so với màn hình -> xoá
 						BirdTimer.BirdBox.Status = "Downed";
 						return;
 					}
 					else if (BirdTimer.BirdBox.Location.Y + BirdTimer.BirdBox.Size.Height - 50 < 0)
 					{
+                        // Nếu chim bay dưới màn hình -> xoá
 						BirdTimer.BirdBox.Status = "Downed";
 						return;
 					}
 					else
 					{
-						YLocation = BirdTimer.BirdBox.Location.Y + Extensions.GetLimitedRandomNumber(-8, 8);
+                        // Nếu không thì con chim bay ngẫu nhiên lên trên, xuống dưới
+						YLocation = BirdTimer.BirdBox.Location.Y + Extensions.GetLimitedRandomNumber(-10, 10);
 					}
 					
-					//this.SuspendLayout();
+                    // Truyền toạ độ mới
 					BirdTimer.BirdBox.Location = new Point(XLocation, YLocation);
-					//this.ResumeLayout();
 				}
-				else if (BirdTimer.BirdBox.Status == "Dead")
-				{
-					if (BirdTimer.BirdBox.Location.X + BirdTimer.BirdBox.Size.Width < 0)
+                    #endregion
+
+                else if (BirdTimer.BirdBox.Status == "Dead")
+                    #region Code xử lý nếu con chim bị bắn trúng (hoặc chết)
+                {
+                    if (BirdTimer.BirdBox.Location.X + BirdTimer.BirdBox.Size.Width < 0)
 					{
 						BirdTimer.BirdBox.Status = "Downed";
 						return;
 					}
 					else
 					{
-						XLocation = BirdTimer.BirdBox.Location.X - Extensions.GetLimitedRandomNumber(5, 10);
+						XLocation = BirdTimer.BirdBox.Location.X - Extensions.GetLimitedRandomNumber(17, 23);
 					}
 
 					if (BirdTimer.BirdBox.Location.Y + BirdTimer.BirdBox.Size.Height > this.Height)
@@ -227,43 +214,56 @@ namespace BirdHuntingGame.Forms
 					}
 					else
 					{
-						YLocation = BirdTimer.BirdBox.Location.Y + Extensions.GetLimitedRandomNumber(10, 15);
+						YLocation = BirdTimer.BirdBox.Location.Y + Extensions.GetLimitedRandomNumber(20, 25);
 					}
 					
-					//this.SuspendLayout();
 					BirdTimer.BirdBox.Location = new Point(XLocation, YLocation);
-					//this.ResumeLayout();
 				}
-				else if(BirdTimer.BirdBox.Status == "Downed")
+                    #endregion
+
+                else if (BirdTimer.BirdBox.Status == "Downed")
 				{
-					RemoveBird(BirdTimer);
-					AddNewBird("", "");
+                    AddNewBird("", "");
+                    RemoveBird(BirdTimer);
 				}				
 			}
 		}
 
 		public BirdBox NewBirdBox(string Direction, string Bird)
 		{
+            // Chỉnh kích thước cho con chim
 			BirdBox birdBox = new BirdBox();
 			var birdBoxSize = Extensions.GetLimitedRandomNumber(50, 120);
 			birdBox.Size = new Size(birdBoxSize, birdBoxSize);
 			birdBox.SizeMode = PictureBoxSizeMode.StretchImage;
 			birdBox.Direction = Direction;
-			
-			if (SelectedBird == Birds.Parrot)
-			{
-				birdBox.Image = Properties.Resources.bird3;
-			}
-			else if (SelectedBird == Birds.Stork)
-			{
-				birdBox.Image = Properties.Resources.Stork_Bird;
-			}
-			else if (SelectedBird == Birds.Crow)
-			{
-				birdBox.Image = Properties.Resources.bird2;
-			}
 
-			birdBox.BackColor = Color.Transparent;
+            // Chọn ảnh cho Box Bird
+            switch (SelectedBird)
+            {
+                case Birds.Bird00:
+                    birdBox.Image = Properties.Resources.Bird00;
+                    break;
+                case Birds.Bird01:
+                    birdBox.Image = Properties.Resources.Bird01;
+                    break;
+                case Birds.Bird02:
+                    birdBox.Image = Properties.Resources.Bird02;
+                    break;
+                case Birds.Bird03:
+                    birdBox.Image = Properties.Resources.Bird03;
+                    break;
+                case Birds.Bird04:
+                    birdBox.Image = Properties.Resources.Bird04;
+                    break;
+                case Birds.Dragon00:
+                    birdBox.Image = Properties.Resources.Dragon00;
+                    break;
+                default:
+                    break;
+            }
+
+            birdBox.BackColor = Color.Transparent;
 
 			birdBox.Location = new Point(this.Width, Extensions.GetLimitedRandomNumber(200, this.Height - 200));
 
@@ -275,7 +275,9 @@ namespace BirdHuntingGame.Forms
 
 		private void birdBox_Click(object sender, EventArgs e)
 		{
-			if (GameStatus == GameStatus.Continue)
+            //Xử lý sự kiện khi click trúng vào chim
+            #region Code chạy animation destroy khi chim bị bắn trúng
+            if (GameStatus == GameStatus.Continue)
 			{
 				BirdBox birdbox = (BirdBox)sender;
 
@@ -284,17 +286,53 @@ namespace BirdHuntingGame.Forms
 					PlayBirdHitSound();
 					birdbox.Status = "Dead";
 					birdbox.Image.RotateFlip(RotateFlipType.Rotate270FlipNone);
-					birdbox.Image = Properties.Resources.explosion_animation;
+                    switch (SelectedGun)
+                    {
+                        case Guns.Gun00:
+                            birdbox.Image = Properties.Resources.Destroy00;
+                            break;
+                        case Guns.Gun01:
+                            birdbox.Image = Properties.Resources.Destroy00;
+                            break;
+                        case Guns.Gun02:
+                            birdbox.Image = Properties.Resources.Destroy01;
+                            break;
+                        case Guns.Gun03:
+                            birdbox.Image = Properties.Resources.Destroy01;
+                            break;
+                        case Guns.Gun04:
+                            birdbox.Image = Properties.Resources.Destroy02;
+                            break;
+                        case Guns.Gun05:
+                            birdbox.Image = Properties.Resources.Destroy02;
+                            break;
+                        case Guns.Gun06:
+                            birdbox.Image = Properties.Resources.Destroy03;
+                            break;
+                        case Guns.Gun07:
+                            birdbox.Image = Properties.Resources.Destroy03;
+                            break;
+                        case Guns.Gun08:
+                            birdbox.Image = Properties.Resources.Destroy04;
+                            break;
+                        case Guns.Gun09:
+                            birdbox.Image = Properties.Resources.Destroy04;
+                            break;
+                        default:
+                            break;
+                    }
 				}
 				else
 				{
 					PlayGunSound();
 				}
 			}
-		}
-		
-		private void PlayGameForm_Click(object sender, EventArgs e)
+            #endregion
+        }
+
+        private void PlayGameForm_Click(object sender, EventArgs e)
 		{
+            // Khi game vẫn đang tiếp tục, nếu click vào màn hình thì chạy tiếng súng
 			if (GameStatus == GameStatus.Continue)
 			{
 				PlayGunSound();
@@ -320,6 +358,7 @@ namespace BirdHuntingGame.Forms
 
 		private void btnPause_Click(object sender, EventArgs e)
 		{
+            // Khi bấm vào nút pause
 			if(GameStatus == GameStatus.Continue)
 			{
 				GameStatus = GameStatus.Pause;
@@ -331,8 +370,9 @@ namespace BirdHuntingGame.Forms
 						bird.Stop();
 					}
 				}
-
-				btnPause.BackgroundImage = Properties.Resources.control_play;
+                btnPause.BackgroundImage = Properties.Resources.Control_Play;
+                FileStream soundTrailer = new FileStream("Sounds/Trailer03.wav", FileMode.Open, FileAccess.Read);
+                new SoundPlayer(soundTrailer).PlayLooping();
 			}
 			else
 			{
@@ -346,7 +386,7 @@ namespace BirdHuntingGame.Forms
 					}
 				}
 
-				btnPause.BackgroundImage = Properties.Resources.control_pause;
+				btnPause.BackgroundImage = Properties.Resources.Control_Pause;
 			}
 		}
 
@@ -355,7 +395,10 @@ namespace BirdHuntingGame.Forms
 			//GameOptionsForm.Instance.Close();
 			this.Hide();
 
-			GameOptionsForm.Instance.Show();
-		}
+			ImgControlBackground.Instance.Show();
+
+            FileStream soundTrailer = new FileStream("Sounds/Trailer04.wav", FileMode.Open, FileAccess.Read);
+            new SoundPlayer(soundTrailer).PlayLooping();
+        }
 	}
 }

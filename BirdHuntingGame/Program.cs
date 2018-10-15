@@ -19,7 +19,7 @@ namespace BirdHuntingGame
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			//Application.Run(new PlayGameForm(Guns.Glock));
-			Application.Run(GameOptionsForm.Instance);
+			Application.Run(ImgControlBackground.Instance);
 		}
 	}
 }

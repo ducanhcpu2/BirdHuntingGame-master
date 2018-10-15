@@ -1,6 +1,6 @@
 ﻿namespace BirdHuntingGame.Forms
 {
-	partial class GameOptionsForm
+	partial class ImgControlBackground
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,184 +28,201 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label2 = new System.Windows.Forms.Label();
-			this.pbBird = new System.Windows.Forms.PictureBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.cmbBird = new System.Windows.Forms.ComboBox();
-			this.pbGun = new System.Windows.Forms.PictureBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.cmbGun = new System.Windows.Forms.ComboBox();
-			this.btnStartGame = new System.Windows.Forms.Button();
-			this.btnClose = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.pbBird)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pbGun)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// label2
-			// 
-			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.label2.BackColor = System.Drawing.Color.Transparent;
-			this.label2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label2.Location = new System.Drawing.Point(12, 62);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(626, 65);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Bird Hunting Game";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// pbBird
-			// 
-			this.pbBird.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.pbBird.BackColor = System.Drawing.Color.Transparent;
-			this.pbBird.Image = global::BirdHuntingGame.Properties.Resources.bird3;
-			this.pbBird.Location = new System.Drawing.Point(187, 408);
-			this.pbBird.Name = "pbBird";
-			this.pbBird.Padding = new System.Windows.Forms.Padding(20);
-			this.pbBird.Size = new System.Drawing.Size(262, 89);
-			this.pbBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pbBird.TabIndex = 11;
-			this.pbBird.TabStop = false;
-			// 
-			// label3
-			// 
-			this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.label3.AutoSize = true;
-			this.label3.BackColor = System.Drawing.Color.Transparent;
-			this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label3.Location = new System.Drawing.Point(263, 341);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(106, 25);
-			this.label3.TabIndex = 9;
-			this.label3.Text = "Select Bird";
-			// 
-			// cmbBird
-			// 
-			this.cmbBird.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.cmbBird.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.cmbBird.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbBird.FormattingEnabled = true;
-			this.cmbBird.Items.AddRange(new object[] {
-            "Parrot",
-            "Stork",
-            "Crow"});
-			this.cmbBird.Location = new System.Drawing.Point(187, 369);
-			this.cmbBird.Name = "cmbBird";
-			this.cmbBird.Size = new System.Drawing.Size(262, 33);
-			this.cmbBird.TabIndex = 10;
-			this.cmbBird.SelectedIndexChanged += new System.EventHandler(this.cmbBird_SelectedIndexChanged);
-			// 
-			// pbGun
-			// 
-			this.pbGun.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.pbGun.BackColor = System.Drawing.Color.Transparent;
-			this.pbGun.Image = global::BirdHuntingGame.Properties.Resources.Glock_Gun;
-			this.pbGun.Location = new System.Drawing.Point(187, 231);
-			this.pbGun.Name = "pbGun";
-			this.pbGun.Padding = new System.Windows.Forms.Padding(20);
-			this.pbGun.Size = new System.Drawing.Size(262, 89);
-			this.pbGun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pbGun.TabIndex = 8;
-			this.pbGun.TabStop = false;
-			// 
-			// label1
-			// 
-			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.label1.AutoSize = true;
-			this.label1.BackColor = System.Drawing.Color.Transparent;
-			this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label1.Location = new System.Drawing.Point(263, 164);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(107, 25);
-			this.label1.TabIndex = 6;
-			this.label1.Text = "Select Gun";
-			// 
-			// cmbGun
-			// 
-			this.cmbGun.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.cmbGun.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.cmbGun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbGun.FormattingEnabled = true;
-			this.cmbGun.Items.AddRange(new object[] {
-            "9mm Glock 17",
-            "M1 Garand Single",
-            "ShotGun"});
-			this.cmbGun.Location = new System.Drawing.Point(187, 192);
-			this.cmbGun.Name = "cmbGun";
-			this.cmbGun.Size = new System.Drawing.Size(262, 33);
-			this.cmbGun.TabIndex = 7;
-			this.cmbGun.SelectedIndexChanged += new System.EventHandler(this.cmbGun_SelectedIndexChanged);
-			// 
-			// btnStartGame
-			// 
-			this.btnStartGame.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnStartGame.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnStartGame.FlatAppearance.BorderSize = 0;
-			this.btnStartGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnStartGame.Location = new System.Drawing.Point(144, 503);
-			this.btnStartGame.Name = "btnStartGame";
-			this.btnStartGame.Size = new System.Drawing.Size(343, 84);
-			this.btnStartGame.TabIndex = 12;
-			this.btnStartGame.Text = "Start Game";
-			this.btnStartGame.UseVisualStyleBackColor = true;
-			this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
-			// 
-			// btnClose
-			// 
-			this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnClose.BackColor = System.Drawing.Color.Transparent;
-			this.btnClose.BackgroundImage = global::BirdHuntingGame.Properties.Resources.close1;
-			this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnClose.Location = new System.Drawing.Point(588, 9);
-			this.btnClose.Name = "btnClose";
-			this.btnClose.Size = new System.Drawing.Size(50, 50);
-			this.btnClose.TabIndex = 13;
-			this.btnClose.UseVisualStyleBackColor = false;
-			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-			// 
-			// GameOptionsForm
-			// 
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			this.BackgroundImage = global::BirdHuntingGame.Properties.Resources.bgwallpaper;
-			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(650, 606);
-			this.Controls.Add(this.btnClose);
-			this.Controls.Add(this.btnStartGame);
-			this.Controls.Add(this.pbBird);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.cmbBird);
-			this.Controls.Add(this.pbGun);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.cmbGun);
-			this.Controls.Add(this.label2);
-			this.DoubleBuffered = true;
-			this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "GameOptionsForm";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "GameOptionsForm";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-			this.Load += new System.EventHandler(this.GameOptionsForm_Load);
-			((System.ComponentModel.ISupportInitialize)(this.pbBird)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pbGun)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImgControlBackground));
+            this.nameGame = new System.Windows.Forms.Label();
+            this.imageChooseBird = new System.Windows.Forms.PictureBox();
+            this.textChooseBird = new System.Windows.Forms.Label();
+            this.ListBird = new System.Windows.Forms.ComboBox();
+            this.imageChooseGun = new System.Windows.Forms.PictureBox();
+            this.textChooseGun = new System.Windows.Forms.Label();
+            this.ListGun = new System.Windows.Forms.ComboBox();
+            this.btnStartGame = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.imageChooseBird)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageChooseGun)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // nameGame
+            // 
+            this.nameGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nameGame.BackColor = System.Drawing.Color.Transparent;
+            this.nameGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.nameGame.Font = new System.Drawing.Font("Lucida Calligraphy", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameGame.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.nameGame.Location = new System.Drawing.Point(55, 9);
+            this.nameGame.Name = "nameGame";
+            this.nameGame.Size = new System.Drawing.Size(544, 50);
+            this.nameGame.TabIndex = 2;
+            this.nameGame.Text = "How many bird you can hunt?";
+            this.nameGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // imageChooseBird
+            // 
+            this.imageChooseBird.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageChooseBird.BackColor = System.Drawing.Color.Transparent;
+            this.imageChooseBird.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageChooseBird.Image = ((System.Drawing.Image)(resources.GetObject("imageChooseBird.Image")));
+            this.imageChooseBird.Location = new System.Drawing.Point(187, 446);
+            this.imageChooseBird.Name = "imageChooseBird";
+            this.imageChooseBird.Padding = new System.Windows.Forms.Padding(20);
+            this.imageChooseBird.Size = new System.Drawing.Size(262, 77);
+            this.imageChooseBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageChooseBird.TabIndex = 11;
+            this.imageChooseBird.TabStop = false;
+            // 
+            // textChooseBird
+            // 
+            this.textChooseBird.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textChooseBird.AutoSize = true;
+            this.textChooseBird.BackColor = System.Drawing.Color.Transparent;
+            this.textChooseBird.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.textChooseBird.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textChooseBird.Location = new System.Drawing.Point(263, 390);
+            this.textChooseBird.Name = "textChooseBird";
+            this.textChooseBird.Size = new System.Drawing.Size(106, 25);
+            this.textChooseBird.TabIndex = 9;
+            this.textChooseBird.Text = "Select Bird";
+            // 
+            // ListBird
+            // 
+            this.ListBird.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ListBird.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ListBird.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListBird.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ListBird.FormattingEnabled = true;
+            this.ListBird.Items.AddRange(new object[] {
+            "Bronze V",
+            "Bronze IV",
+            "Bronze III",
+            "Bronze II",
+            "Bronze I",
+            "Silver V"});
+            this.ListBird.Location = new System.Drawing.Point(187, 418);
+            this.ListBird.Name = "ListBird";
+            this.ListBird.Size = new System.Drawing.Size(262, 33);
+            this.ListBird.TabIndex = 10;
+            this.ListBird.SelectedIndexChanged += new System.EventHandler(this.cmbBird_SelectedIndexChanged);
+            // 
+            // imageChooseGun
+            // 
+            this.imageChooseGun.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imageChooseGun.BackColor = System.Drawing.Color.Transparent;
+            this.imageChooseGun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageChooseGun.Image = global::BirdHuntingGame.Properties.Resources.Gun00;
+            this.imageChooseGun.Location = new System.Drawing.Point(187, 316);
+            this.imageChooseGun.Name = "imageChooseGun";
+            this.imageChooseGun.Padding = new System.Windows.Forms.Padding(20);
+            this.imageChooseGun.Size = new System.Drawing.Size(262, 71);
+            this.imageChooseGun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageChooseGun.TabIndex = 8;
+            this.imageChooseGun.TabStop = false;
+            // 
+            // textChooseGun
+            // 
+            this.textChooseGun.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textChooseGun.AutoSize = true;
+            this.textChooseGun.BackColor = System.Drawing.Color.Transparent;
+            this.textChooseGun.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textChooseGun.Location = new System.Drawing.Point(263, 249);
+            this.textChooseGun.Name = "textChooseGun";
+            this.textChooseGun.Size = new System.Drawing.Size(107, 25);
+            this.textChooseGun.TabIndex = 6;
+            this.textChooseGun.Text = "Select Gun";
+            // 
+            // ListGun
+            // 
+            this.ListGun.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ListGun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ListGun.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListGun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ListGun.FormattingEnabled = true;
+            this.ListGun.Items.AddRange(new object[] {
+            "Bronze V",
+            "Bronze IV",
+            "Bronze III",
+            "Bronze II",
+            "Bronze I",
+            "Silver V",
+            "Silver IV",
+            "Silver III",
+            "Silver II"});
+            this.ListGun.Location = new System.Drawing.Point(187, 277);
+            this.ListGun.Name = "ListGun";
+            this.ListGun.Size = new System.Drawing.Size(262, 33);
+            this.ListGun.TabIndex = 7;
+            this.ListGun.SelectedIndexChanged += new System.EventHandler(this.cmbGun_SelectedIndexChanged);
+            // 
+            // btnStartGame
+            // 
+            this.btnStartGame.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnStartGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStartGame.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStartGame.FlatAppearance.BorderSize = 0;
+            this.btnStartGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStartGame.Location = new System.Drawing.Point(144, 529);
+            this.btnStartGame.Name = "btnStartGame";
+            this.btnStartGame.Size = new System.Drawing.Size(343, 58);
+            this.btnStartGame.TabIndex = 12;
+            this.btnStartGame.Text = "Let\'s go !!!";
+            this.btnStartGame.UseVisualStyleBackColor = true;
+            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::BirdHuntingGame.Properties.Resources.Control_Close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(588, 9);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(50, 50);
+            this.btnClose.TabIndex = 13;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // ImgControlBackground
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::BirdHuntingGame.Properties.Resources.BackGround03;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(650, 606);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnStartGame);
+            this.Controls.Add(this.imageChooseBird);
+            this.Controls.Add(this.textChooseBird);
+            this.Controls.Add(this.ListBird);
+            this.Controls.Add(this.imageChooseGun);
+            this.Controls.Add(this.textChooseGun);
+            this.Controls.Add(this.ListGun);
+            this.Controls.Add(this.nameGame);
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "ImgControlBackground";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "GameOptionsForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GameOptionsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.imageChooseBird)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageChooseGun)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
 		#endregion
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.PictureBox pbBird;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.PictureBox pbGun;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label nameGame;
+		private System.Windows.Forms.PictureBox imageChooseBird;
+		private System.Windows.Forms.Label textChooseBird;
+		private System.Windows.Forms.PictureBox imageChooseGun;
+		private System.Windows.Forms.Label textChooseGun;
 		private System.Windows.Forms.Button btnStartGame;
-		private System.Windows.Forms.ComboBox cmbBird;
-		private System.Windows.Forms.ComboBox cmbGun;
+		private System.Windows.Forms.ComboBox ListBird;
+		private System.Windows.Forms.ComboBox ListGun;
 		private System.Windows.Forms.Button btnClose;
 	}
 }

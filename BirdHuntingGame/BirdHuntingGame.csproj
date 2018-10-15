@@ -97,94 +97,244 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Target.png" />
+    <None Include="bin\Debug\Resources\Control_Close.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\crosshair.png" />
+    <None Include="bin\Debug\Resources\Control_Pause.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bird2.gif" />
+    <None Include="bin\Debug\Resources\Control_Play.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bird3.gif" />
+    <None Include="bin\Debug\Resources\Control_Setting.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bird4.gif" />
+    <None Include="bin\Debug\Resources\idleCat.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bird5.gif" />
+    <None Include="bin\Debug\Resources\Background\BackGround03.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bird6.gif" />
+    <None Include="bin\Debug\Resources\Background\BackGround00.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wallpaper1.jpg" />
+    <None Include="bin\Debug\Resources\Background\BackGround01.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wallpaper2Animated.gif" />
+    <None Include="bin\Debug\Resources\Background\BackGround02.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wallpaper3.jpg" />
+    <None Include="bin\Debug\Resources\Background\BackGround04.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wallpaper4Animated.gif" />
+    <None Include="bin\Debug\Resources\Bird\Bird00.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\explosion-animation.gif" />
+    <None Include="bin\Debug\Resources\Bird\Bird02.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\glock-crosshair.png" />
+    <None Include="bin\Debug\Resources\Bird\Bird03.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\M1Garand-crosshair.png" />
+    <None Include="bin\Debug\Resources\Bird\Bird04.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ShotGun-crosshair.png" />
+    <None Include="bin\Debug\Resources\Bird\Bird05.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\glock-crosshair-small.png" />
+    <None Include="bin\Debug\Resources\Bird\Dragon00.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\M1Garand-crosshair-small.png" />
+    <None Include="bin\Debug\Resources\Destroy\Destroy01.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ShotGun-crosshair-small.png" />
+    <None Include="bin\Debug\Resources\Destroy\Destroy02.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bgwallpaper.jpg" />
+    <None Include="bin\Debug\Resources\Destroy\Destroy03.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Glock-Gun.png" />
+    <None Include="bin\Debug\Resources\Destroy\Destroy04.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\M1Garand-Gun.png" />
+    <None Include="bin\Debug\Resources\Destroy\Destroy05.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Shotgun.png" />
+    <None Include="bin\Debug\Resources\Gun\Gun00.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\close.png" />
+    <None Include="bin\Debug\Resources\Gun\Gun01.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\red-icon.png" />
+    <None Include="bin\Debug\Resources\Gun\Gun02.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\close1.png" />
+    <None Include="bin\Debug\Resources\Gun\Gun03.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\control.pause.png" />
+    <None Include="bin\Debug\Resources\Gun\Gun04.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\control.play.png" />
+    <None Include="bin\Debug\Resources\Gun\Gun05.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\settings.png" />
+    <None Include="bin\Debug\Resources\Gun\Gun06.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Stork-Bird.gif" />
+    <None Include="bin\Debug\Resources\Gun\Gun07.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\whiteparrot-animation-3.gif" />
+    <None Include="bin\Debug\Resources\Gun\Gun08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Rank\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Rank\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Rank\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Rank\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Rank\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Rank\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Rank\Top1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\ScopeGun\Scope01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\ScopeGun\Scope02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\ScopeGun\Scope03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\ScopeGun\Scope04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\ScopeGun\Scope05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\ScopeGun\Scope06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\ScopeGun\Scope055.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Bird\Bird01.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Background\BackGround05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\ScopeGun\Scope00.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\bird-hit.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\chicken0.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\chicken1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\chicken2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\chicken3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\chicken4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\chicken5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\chicken6.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\chicken7.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\chicken8.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\chicken9.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\forest-and-birds.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\Glock-Gun-Fire.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\gun0.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\gun1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\gun2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\M1Garand-Fire.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\Shotgun-Fire.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\song.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\Start00.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\Start01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\Start02.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\Start03.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\Start04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\Trailer00.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Sounds\Trailer01.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Destroy\Destroy00.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Background\BackGround06.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Background\BackGround07.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Background\BackGround08.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Background\BackGround09.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Background\BackGround10.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
